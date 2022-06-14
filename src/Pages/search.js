@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Navbar from '../Components/Navbar';
 import SearchBox from './components/SearchBox';
 
 const Search = () => {
@@ -32,16 +32,5 @@ const Search = () => {
         </div>
     );
 };
-=======
-import React from 'react';
-import Navbar from '../Components/Navbar';
-
-const Search = () => (
-    
-    <div>
-        <p>search</p>
-    </div>
-);
->>>>>>> 0e108912c2192df2dc5843b2277c0187a56e4928
 
 export default Search;
