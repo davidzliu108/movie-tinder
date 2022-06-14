@@ -45,9 +45,9 @@ code {
 }
 
 .nav li.active {
-  background-color: #555;
+  color: #555;
 }
 
 .nav li:hover {
-  background-color: #777;
+  color: #777;
 }
