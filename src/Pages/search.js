@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 import Navbar from '../Components/Navbar';
-import SearchBox from './components/SearchBox';
+import SearchBox from '../Components/SearchBox';
+import SubHeading from '../Components/SubHeading';
+import MovieList from '../Components/MovieList';
+
 
 const Search = () => {
     const [searchResults, setSearchResults] =useState([]);
-    const [searchValue, setSearchValue] = useState('marvel');
+    const [searchValue, setSearchValue] = useState('');
 
     const getMovieRequest = async (searchValue) => {
         const url = 'http://www.omdbapi.com/?s=${searchValue}&apikey=fd314c78';
@@ -28,6 +31,11 @@ const Search = () => {
             <div className='row dflex align-items-center mt-4 mb-4'>
                 <SubHeading heading = "Movie Search" />
                 <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+            </div>
+            <div className='row'>
+                <MovieList
+                  movies={movies}
+                />
             </div>
         </div>
     );
