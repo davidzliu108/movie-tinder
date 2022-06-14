@@ -6,7 +6,7 @@ export default function Navbar() {
         <a href="/" className="site-title">Film Select</a>
         <ul>
             <CustomLink href="/search">Search</CustomLink>
-            <CustomLink href="select">Select</CustomLink>
+            <CustomLink href="/select">Select</CustomLink>
         </ul>
     </nav>
 }
