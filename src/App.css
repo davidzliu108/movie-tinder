@@ -3,7 +3,7 @@ html, body {
 	color: #ffffff; */
 	background-image: url(./Assets/Images/popcorn\ background.jpeg);
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-position: center;
 	margin: 0;
 	height: 100%;
