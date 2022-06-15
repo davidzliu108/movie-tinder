@@ -1,4 +1,5 @@
 import React from "react";
+import '../Assets/Styles/Login.css'
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
                 Sign In
               </Button>
               </Col>
-              <Col md={{ span: 3, offset: 4 }}>
+              <Col md={{ span: 4, offset: 4 }}>
               <Button variant="primary" type="submit">
                 Sign Up
               </Button>
