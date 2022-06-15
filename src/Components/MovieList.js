@@ -7,13 +7,11 @@ const MovieList = (props) => {
 	return (
 		<>
 			{props.movies.map((movie, index) => (
-                <div class="card" style={{ width: '18rem' }}>
+                <div class="card" style={{ width: '18rem', margin: '1rem' }}>
                     <img class="card-img-top searchImg" variant="top" src={movie.Poster} />
                     <Card.Body>
-                        <Card.Title>{movie.Title}</Card.Title>
-                        <Card.Text>
-                        Year: {movie.Year}
-                        </Card.Text>
+                        <Card.Title>{movie.Title} {movie.Year} </Card.Title>
+
                         <Button variant="primary">N</Button>
                         <Button variant="primary">D</Button>
                         <Button variant="primary">H</Button>
