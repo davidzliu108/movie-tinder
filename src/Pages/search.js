@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Navbar from '../Components/Navbar';
 import SearchBox from '../Components/SearchBox';
@@ -10,6 +9,7 @@ import MovieList from '../Components/MovieList';
 const Search = () => {
     const [searchResults, setSearchResults] =useState([]);
     const [searchValue, setSearchValue] = useState('');
+    const [movies, setMovies] = useState([]);
 
     const getMovieRequest = async (searchValue) => {
         const url = 'http://www.omdbapi.com/?s=${searchValue}&apikey=fd314c78';
@@ -18,7 +18,7 @@ const Search = () => {
         const responseJson = await response.json();
 
         if(responseJson.Search) { // only set results if search returns something
-            setResults(responseJson.search);
+            setMovies(responseJson.Search);
         }
     };
 
