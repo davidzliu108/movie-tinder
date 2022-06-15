@@ -52,12 +52,8 @@ code {
   color: #777;
 }
 
-body {
-	background: #141414;
-	color: #ffffff;
-}
-
-.search > .row {
-	overflow-x: auto;
-	flex-wrap: nowrap;
+.Search > .card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }

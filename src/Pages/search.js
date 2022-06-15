@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
+import './search.css'
 import Navbar from '../Components/Navbar';
 import SearchBox from '../Components/SearchBox';
 import SubHeading from '../Components/SubHeading';
@@ -28,7 +29,7 @@ const Search = () => {
     return (
         <div className='container-fluid'>
             <div className='row dflex align-items-center mt-4 mb-4'>
-                <SubHeading heading = "Movie Search" />
+                {/* <SubHeading heading = "Movie Search" /> */}
                 <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             </div>
             <div className='row'>
