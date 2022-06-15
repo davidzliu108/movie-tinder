@@ -1,0 +1,11 @@
+.container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainCard {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
