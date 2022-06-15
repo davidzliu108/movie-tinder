@@ -5,8 +5,8 @@ export default function Navbar() {
     return <nav className="nav">
         <a href="/" className="site-title">Film Select</a>
         <ul>
-            <CustomLink href="/search">Search</CustomLink>
-            <CustomLink href="select">Select</CustomLink>
+            <CustomLink href="/Search">Search</CustomLink>
+            <CustomLink href="/Select">Select</CustomLink>
         </ul>
     </nav>
 }

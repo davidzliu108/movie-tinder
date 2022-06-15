@@ -13,8 +13,8 @@ function App() {
       <div className ="container">
         <Routes>
           <Route path="/" element = {<Home />} />
-          <Route path="/search" element = {<Search />} />
-          <Route path="/select" element = {<Selectr />} />
+          <Route path="/Search" element = {<Search />} />
+          <Route path="/Select" element = {<Selectr />} />
         </Routes>
       </div>
     </div>

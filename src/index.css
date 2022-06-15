@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #141414;
+	color: #ffffff;
 }
 
 code {
@@ -50,4 +52,14 @@ code {
 
 .nav li:hover {
   color: #777;
+}
+
+/* body {
+	background: #141414;
+	color: #ffffff;
+} */
+
+ .movie-tinder > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
 }
