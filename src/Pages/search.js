@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import Navbar from '../Components/Navbar';
 import SearchBox from '../Components/SearchBox';
@@ -12,13 +11,13 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState('');
 
     const getMovieRequest = async (searchValue) => {
-        const url = 'http://www.omdbapi.com/?s=${searchValue}&apikey=fd314c78';
+        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=fd314c78`;
     
         const response = await fetch(url);
         const responseJson = await response.json();
 
         if(responseJson.Search) { // only set results if search returns something
-            setResults(responseJson.search);
+            setSearchResults(responseJson.Search);
         }
     };
 
@@ -27,14 +26,14 @@ const Search = () => {
     }, [searchValue]);
 
     return (
-        <div className='container-fluid movie-tinder'>
+        <div className='container-fluid'>
             <div className='row dflex align-items-center mt-4 mb-4'>
                 <SubHeading heading = "Movie Search" />
                 <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             </div>
             <div className='row'>
                 <MovieList
-                  movies={movies}
+                  movies={searchResults}
                 />
             </div>
         </div>
