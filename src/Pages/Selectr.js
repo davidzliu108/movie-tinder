@@ -12,7 +12,7 @@ const Selectr = () => {
     const url = `http://www.omdbapi.com/?i=${randomId}&apikey=fd314c78`;
     const response = await fetch(url);
     const responseJson = await response.json();
-    if (responseJson.Title) {
+    if (responseJson.imdbRating) {
       // only set results if search returns something
       setFilm(responseJson);
     } else {
@@ -23,6 +23,12 @@ const Selectr = () => {
   useEffect(() => {
     getRandomFilm(randomId);
   }, [randomId]);
+
+  function handleNext() {
+    setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
+    console.log(Math.floor(1000000 + Math.random() * 9000000));
+    getRandomFilm(randomId);
+  }
 
   return (
     <div className="outerdiv">
@@ -39,9 +45,18 @@ const Selectr = () => {
             <Card.Text>IMDB rating: {film.imdbRating}</Card.Text>
             <Card.Text>{film.Genre}</Card.Text>
             <Card.Text>{film.Plot}</Card.Text>
-            <Button variant="dark">Watch Now</Button>
-            <Button className="float-left">Dislike</Button>
-            <Button className="like">Like</Button>
+            <Button class="mr-1" variant="link">
+                            <img src="./netflix.png" height="30" width="30"></img>
+                        </Button>
+                        <Button class="mr-1" variant="link">
+                            <img src="./disney.png" height="30" width="30"></img>
+                        </Button>
+                        <Button class="mr-1" variant="link">
+                            <img src="./hbomax.png" height="30" width="30"></img>
+                        </Button>
+            <br></br>
+            <Button onClick={handleNext} style={{margin:'1rem'}} variant="danger">Dislike</Button>
+            <Button onClick={handleNext}style={{margin:'1rem'}} variant="success">Like</Button>
           </Card.Body>
         </Card>
       </Container>
