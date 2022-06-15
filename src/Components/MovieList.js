@@ -11,10 +11,15 @@ const MovieList = (props) => {
                     <img class="card-img-top searchImg" variant="top" src={movie.Poster} />
                     <Card.Body>
                         <Card.Title>{movie.Title} {movie.Year} </Card.Title>
-
-                        <Button variant="primary">N</Button>
-                        <Button variant="primary">D</Button>
-                        <Button variant="primary">H</Button>
+                        <Button class="mr-1" variant="link">
+                            <img src="./netflix.png" height="30" width="30"></img>
+                        </Button>
+                        <Button class="mr-1" variant="link">
+                            <img src="./disney.png" height="30" width="30"></img>
+                        </Button>
+                        <Button class="mr-1" variant="link">
+                            <img src="./hbomax.png" height="30" width="30"></img>
+                        </Button>
                     </Card.Body>
                 </div>               
 			))}
