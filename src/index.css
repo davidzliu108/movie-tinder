@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #141414;
-	color: #ffffff;
 }
 
 code {
@@ -54,12 +52,12 @@ code {
   color: #777;
 }
 
-/* body {
+body {
 	background: #141414;
 	color: #ffffff;
-} */
+}
 
- .movie-tinder > .row {
+.search > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
 }

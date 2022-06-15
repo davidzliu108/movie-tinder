@@ -2,9 +2,10 @@ import { Component } from 'react';
 import './App.css';
 import Navbar from "./Components/Navbar"
 import Selectr from "./Pages/Selectr"
-import Search from "./Pages/Search"
+import Search from "./Pages/search"
 import Home from "./Pages/Home"
 import {Route, Routes} from "react-router-dom"; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
