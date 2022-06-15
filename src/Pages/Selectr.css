@@ -1,11 +1,22 @@
 .container {
+    display: grid;
+    grid-template-columns: auto 80% auto;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .mainCard {
-    width: 50%;
+    grid-column: 2;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.like {
+    grid-column: 3;
+}
+
+.dislike {
+    grid-column: 1;
 }

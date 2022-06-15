@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import './Selectr.css';
 
 
@@ -27,7 +27,9 @@ const Selectr = () => {
 
     return (
         <Container className= "container">
+            <br></br>
             <h2>Recommendations</h2>
+            <br></br>
             <Card className="mainCard">
                 <Card.Img variant="top" src={film.Poster} />
                 <Card.Body>
@@ -41,9 +43,11 @@ const Selectr = () => {
                     <Card.Text>
                         {film.Plot}
                     </Card.Text>
+                    <Button variant="dark">Watch Now</Button>
                 </Card.Body>
-                
             </Card>
+            <Button className="dislike">Dislike</Button>
+            <Button className="like">Like</Button>
         </Container>
     );
 }
