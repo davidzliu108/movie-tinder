@@ -28,7 +28,7 @@ const Selectr = () => {
     return (
         <Container className= "container">
             <br></br>
-            <h2>Recommendations</h2>
+            <h2 style={{color: 'white'}}>Recommendations</h2>
             <br></br>
             <Card className="mainCard">
                 <Card.Img variant="top" src={film.Poster} />
@@ -44,10 +44,11 @@ const Selectr = () => {
                         {film.Plot}
                     </Card.Text>
                     <Button variant="dark">Watch Now</Button>
+                    <Button className="float-left">Dislike</Button>
+                    <Button className="like">Like</Button>
                 </Card.Body>
             </Card>
-            <Button className="dislike">Dislike</Button>
-            <Button className="like">Like</Button>
+
         </Container>
     );
 }
