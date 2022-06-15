@@ -1,6 +1,13 @@
-body {
-	background: #141414;
-	color: #ffffff;
+html, body {
+	/* background: #141414;
+	color: #ffffff; */
+	background-image: url(./Assets/Images/popcorn\ background.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .movie-tinder > .row {

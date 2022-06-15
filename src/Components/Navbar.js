@@ -7,6 +7,7 @@ export default function Navbar() {
         <ul>
             <CustomLink href="/Search">Search</CustomLink>
             <CustomLink href="/Select">Select</CustomLink>
+            <CustomLink href="/Login">Login</CustomLink>  
         </ul>
     </nav>
 }
