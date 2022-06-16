@@ -1,11 +1,28 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../App.css";
 import Navbar from "../Components/Navbar";
 import MovieList from '../Components/MovieList';
-import './Home.css'
+import './Home.css';
+import {firestore} from "../firebase";
+import {collection, onSnapshot} from "firebase/firestore";
 
 
 const Home = () => {
+  const [favs, setFavs] = useState([]);
+  const favsCollectionRef = collection(firestore, "favorites");
+
+  useEffect(() => {
+    onSnapshot(favsCollectionRef, snapshot => {
+      setFavs(snapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          viewing: false,
+          ...doc.data()
+        }
+      }))
+    })
+  }, [])
+
   const [spaceMovies, setSpaceMovies] = useState([
     {
       "Title": "Star Wars",
@@ -104,6 +121,15 @@ const Home = () => {
       <h1 className="standard-content">Home</h1>
       <p className="standard-content">Welcome to Film Select</p>
       
+      <div className="favorites" style={{color:"white"}}>
+        Favorites:
+        {favs.map((fav, i) => (
+          <div className="fav" key={fav.id}>
+            {fav.Title}
+          </div>
+        ))}
+      </div>
+
       <h6 className="standard-content">Space</h6>
       <div className='container-fluid movie-tinder'>
         <div className='row'>
