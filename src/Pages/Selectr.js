@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Card, Button } from "react-bootstrap";
 import "./Selectr.css";
-import imdatabase from "./imdbMovies";
+import imdatabase from "./imdbMovies"
 
 const Selectr = () => {
   const [randomId, setRandomId] = useState("tt0076759");
@@ -26,10 +26,8 @@ const Selectr = () => {
   }, [randomId]);
 
   function handleNext() {
-    imdatabase.forEach((el))
-
-    //setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
-    //console.log(Math.floor(1000000 + Math.random() * 9000000));
+    setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
+    console.log(Math.floor(1000000 + Math.random() * 9000000));
     getRandomFilm(randomId);
   }
 
