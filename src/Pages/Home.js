@@ -13,6 +13,7 @@ const Home = () => {
   const [favs, setFavs] = useState([]);
   const favsCollectionRef = collection(firestore, "favorites");
 
+  // Brings in favorite movie data from database
   useEffect(() => {
     onSnapshot(favsCollectionRef, snapshot => {
       setFavs(snapshot.docs.map(doc => {
@@ -25,6 +26,7 @@ const Home = () => {
     })
   }, [])
 
+  // creates state variable for movies in space genre, fixed set of movies
   const [spaceMovies, setSpaceMovies] = useState([
     {
       "Title": "Star Wars",
@@ -56,6 +58,7 @@ const Home = () => {
     },
   ]);
 
+  // creates state variable for movies in animation genre, fixed set of movies
   const [animationMovies, setAnimationMovies] = useState([
     {
       "Title": "Toy Story",
@@ -87,6 +90,7 @@ const Home = () => {
     },
   ])
 
+  // creates state variable for movies in documentary genre, fixed set of movies
   const [documentaryMovies, setDocumentaryMovies] = useState([
     {
       "Title": "Free Solo",
@@ -120,12 +124,14 @@ const Home = () => {
 
   return (
     <div id="Home-Page-Content">
+      {/* Simple home content */}
       <h1 className="standard-content">Home</h1>
       <p className="standard-content">Welcome to Film Select</p>
       
       <div className="favorites">
         <h6 className="standard-content">Favorites:</h6>
 
+        {/* Displays favorite movies from database in a scrollable row, bootstrap used */}
         <div className='container-fluid movie-tinder'>
           <div className='row'>
           <MovieList movies={favs}/>
@@ -136,6 +142,7 @@ const Home = () => {
 
       <br></br>
 
+      {/* Displays space movies in row */}
       <h6 className="standard-content">Space</h6>
       <div className='container-fluid movie-tinder'>
         <div className='row'>
@@ -143,6 +150,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Displays animation movies in row */}
       <h6 className="standard-content">Animation</h6>
       <div className='container-fluid movie-tinder'>
         <div className='row'>
@@ -150,6 +158,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Displays documentary movies in row */}
       <h6 className="standard-content">Documentary</h6>
       <div className='container-fluid movie-tinder'>
         <div className='row'>

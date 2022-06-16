@@ -24,7 +24,7 @@ const Selectr = () => {
   const [favorites, createFavorites] = useState("");
 
   const ref = collection(firestore, "favorites");
-//   const [property, setProperty] = useState(false);
+  // const [property, setProperty] = useState(false);
 
   // called once like or dislike button is click, generates new movie
   const getRandomFilm = async (randomId) => {
