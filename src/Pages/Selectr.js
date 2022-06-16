@@ -91,7 +91,7 @@ const Selectr = () => {
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>
-              {film.Title} {film.Year}
+              {film.Title} {'(' + film.Year + ')'}
             </Card.Title>
             <Card.Text>IMDB rating: {film.imdbRating}</Card.Text>
             <Card.Text>{film.Genre}</Card.Text>
