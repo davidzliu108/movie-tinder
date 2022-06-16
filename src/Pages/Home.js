@@ -5,6 +5,8 @@ import MovieList from '../Components/MovieList';
 import './Home.css';
 import {firestore} from "../firebase";
 import {collection, onSnapshot} from "firebase/firestore";
+import Card from "react-bootstrap/Card";
+import { Button } from 'react-bootstrap';
 
 
 const Home = () => {
@@ -121,14 +123,17 @@ const Home = () => {
       <h1 className="standard-content">Home</h1>
       <p className="standard-content">Welcome to Film Select</p>
       
-      <div className="favorites" style={{color:"white"}}>
-        Favorites:
-        {favs.map((fav, i) => (
-          <div className="fav" key={fav.id}>
-            {fav.Title}
+      <div className="favorites">
+        <h6 className="standard-content">Favorites:</h6>
+
+        <div className='container-fluid movie-tinder'>
+          <div className='row'>
+          <MovieList movies={favs}/>
           </div>
-        ))}
+        </div>
+        <br></br>
       </div>
+
       <br></br>
 
       <h6 className="standard-content">Space</h6>

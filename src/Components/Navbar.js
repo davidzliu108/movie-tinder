@@ -5,9 +5,9 @@ export default function Navbar() {
     return <nav className="nav">
         <a href="/" className="site-title">Film Select</a>
         <ul>
+            <CustomLink href="/Home">Home</CustomLink>
             <CustomLink href="/Search">Search</CustomLink>
-            <CustomLink href="/Select">Select</CustomLink>
-            <CustomLink href="/Login">Login</CustomLink>  
+            <CustomLink href="/Select">Select</CustomLink> 
         </ul>
     </nav>
 }
