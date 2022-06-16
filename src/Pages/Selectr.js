@@ -105,11 +105,8 @@ const Selectr = () => {
   return (
     <div className="outerdiv">
         <br></br>
-<<<<<<< HEAD
-=======
         <h2 style={{ color: "yellow" }}>Recommendations</h2>
         <br></br>
->>>>>>> 01798b9c8ae0b30125046b153f8942562ebf80aa
       <Container className="container">
         <Card className="mainCard">
           <Card.Img variant="top" src={film.Poster} />
