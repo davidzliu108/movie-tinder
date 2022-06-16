@@ -84,7 +84,7 @@ const Selectr = () => {
   return (
     <div className="outerdiv">
         <br></br>
-        <h2 style={{ color: "white" }}>Recommendations</h2>
+        <h2 style={{ color: "yellow" }}>Recommendations</h2>
         <br></br>
       <Container className="container">
         <Card className="mainCard">
