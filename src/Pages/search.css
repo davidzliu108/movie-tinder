@@ -1,5 +1,29 @@
+.searchButton {
+    align-self: center;
+}
 .searchImg {
     width: 100%;
     height: 25vw;
     object-fit: cover;
-  }
+}
+
+.bar {
+    margin-top: 2rem;
+}
+
+.bar:hover{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+
+.searchBox{
+    height:45px;
+    border:none;
+    width:500px;
+    font-size:16px;
+    outline: none;
+    align-self: center;
+}
+
+.card-footer{
+    background-color: #ffffff;
+}

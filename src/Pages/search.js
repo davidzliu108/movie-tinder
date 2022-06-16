@@ -28,8 +28,7 @@ const Search = () => {
 
     return (
         <div className='container-fluid'>
-            <div className='row dflex align-items-center mt-4 mb-4'>
-                {/* <SubHeading heading = "Movie Search" /> */}
+            <div class='bar'>
                 <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             </div>
             <div className='row'>
