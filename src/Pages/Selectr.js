@@ -9,21 +9,31 @@ import {firestore} from "../firebase";
 import {addDoc, collection} from "@firebase/firestore";
 
 const Selectr = () => {
+  // randomly generated tt + 7digit number (imdb id)
   const [randomId, setRandomId] = useState("tt0076759");
+
+  // json of the film to be displayed on the center tinder-esque card
   const [film, setFilm] = useState([]);
+
+  // random "good" movie from imdatabase list
+  // if randomId is not correlated to a movie, 
   const [goodMovie, setGoodMovie] = useState("");
+
+  // favorites list that will be pushed into the Google firebase firestore db
   const [favorites, createFavorites] = useState("");
+
   const ref = collection(firestore, "favorites");
 //   const [property, setProperty] = useState(false);
 
+  // called once like or dislike button is click, generates new movie
   const getRandomFilm = async (randomId) => {
     const url = `http://www.omdbapi.com/?i=${randomId}&apikey=67845d31`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    // checkIfProperty();
+    // if the randomId is not correlated with a property, pick a random good movie from imdatabase
+    // if it is, set center card to the random movie
     if (responseJson.Response==="False") {
-      // only set results if search returns something
         getGoodMovie(imdatabase[Math.floor(Math.random() * imdatabase.length)].id);
     } else {
         setFilm(responseJson);
@@ -31,6 +41,8 @@ const Selectr = () => {
     }
   };
 
+  // if randomId is not correlated with property, this function is called
+  // fetches from api movie information from goodMovie id
   const getGoodMovie = async(goodMovie) => {
     const url = `http://www.omdbapi.com/?i=${goodMovie}&apikey=67845d31`;
     const response = await fetch(url);
@@ -58,12 +70,20 @@ const Selectr = () => {
     getRandomFilm(randomId);
   }, [randomId]);
 
+  // called if dislike button is clicked -> doesn't save movie to db
+  // genereates random 7digit number in format of imdb id
+  // in future, should be saved to 'dislike' portion of db, and less movies
+    // in the genre could be recommended
   function handleNextDislike() {
     setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
     console.log(Math.floor(1000000 + Math.random() * 9000000));
     getRandomFilm(randomId);
   }
 
+
+  // called if like button is clicked
+  // genereates random 7digit number in format of imdb id
+  // calls addToFavorites
   function handleNextLike() {
     setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
     console.log(Math.floor(1000000 + Math.random() * 9000000));
@@ -71,6 +91,7 @@ const Selectr = () => {
     addToFavorites();
   }
 
+  // adds liked movies to favorites list in firestore
   const addToFavorites = async(e) => {
     console.log(film);
 
@@ -83,8 +104,6 @@ const Selectr = () => {
 
   return (
     <div className="outerdiv">
-        <br></br>
-        <h2 style={{ color: "white" }}>Recommendations</h2>
         <br></br>
       <Container className="container">
         <Card className="mainCard">
