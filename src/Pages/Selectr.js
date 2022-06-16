@@ -3,20 +3,21 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Card, Button } from "react-bootstrap";
 import "./Selectr.css";
+import imdatabase from "./imdbMovies";
 
 const Selectr = () => {
   const [randomId, setRandomId] = useState("tt0076759");
   const [film, setFilm] = useState([]);
 
   const getRandomFilm = async (randomId) => {
-    const url = `http://www.omdbapi.com/?i=${randomId}&apikey=fd314c78`;
+    const url = `http://www.omdbapi.com/?i=${randomId}&apikey=67845d31`;
     const response = await fetch(url);
     const responseJson = await response.json();
     if (responseJson.imdbRating) {
       // only set results if search returns something
       setFilm(responseJson);
     } else {
-      getRandomFilm(randomId);
+      //getRandomFilm(randomId);
     }
   };
 
@@ -25,8 +26,10 @@ const Selectr = () => {
   }, [randomId]);
 
   function handleNext() {
-    setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
-    console.log(Math.floor(1000000 + Math.random() * 9000000));
+    imdatabase.forEach((el))
+
+    //setRandomId("tt"+Math.floor(1000000 + Math.random() * 9000000));
+    //console.log(Math.floor(1000000 + Math.random() * 9000000));
     getRandomFilm(randomId);
   }
 
