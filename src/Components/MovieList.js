@@ -6,17 +6,6 @@ import {addDoc, collection, setDoc} from "@firebase/firestore";
 
 
 const MovieList = (props) => {
-    // // used for firebase
-    // const ref = collection(firestore, "favorites");
-
-    // // when the like button is clicked, add the movie to firebase
-    // function handleNextLike(film) {
-    //     try {
-    //         addDoc(ref, film);
-    //     } catch(e) {
-    //         console.log(e);
-    //     }
-    // }
 
 	return ( // returns a list of cards, each one displaying a movie, its poster, and the streaming services' links, etc.
 		<>

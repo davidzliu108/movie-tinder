@@ -7,6 +7,7 @@ import {imdatabase} from "./imdbMovies"
 // import {movieRef} from '../firebase'
 import {firestore} from "../firebase";
 import {addDoc, collection} from "@firebase/firestore";
+import {apiKey} from '../apikey.js';
 
 const Selectr = () => {
   // randomly generated tt + 7digit number (imdb id)
@@ -27,7 +28,7 @@ const Selectr = () => {
 
   // called once like or dislike button is click, generates new movie
   const getRandomFilm = async (randomId) => {
-    const url = `http://www.omdbapi.com/?i=${randomId}&apikey=67845d31`;
+    const url = `http://www.omdbapi.com/?i=${randomId}&apikey=${apiKey}1`;
     const response = await fetch(url);
     const responseJson = await response.json();
 
@@ -44,7 +45,7 @@ const Selectr = () => {
   // if randomId is not correlated with property, this function is called
   // fetches from api movie information from goodMovie id
   const getGoodMovie = async(goodMovie) => {
-    const url = `http://www.omdbapi.com/?i=${goodMovie}&apikey=67845d31`;
+    const url = `http://www.omdbapi.com/?i=${goodMovie}&apikey=${apiKey}`;
     const response = await fetch(url);
     const responseJson = await response.json();
 

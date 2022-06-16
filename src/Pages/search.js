@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import './search.css'
+import './search.css';
 import SearchBox from '../Components/SearchBox';
 import MovieList from '../Components/MovieList';
+import {apiKey} from '../apikey.js';
 
 const Search = () => {
     // variables for search
@@ -11,7 +12,8 @@ const Search = () => {
 
     const getMovieRequest = async (searchValue) => {
         // searchValue depends on what the user types
-        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=67845d31`;
+        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
+        console.log(apiKey);
     
         const response = await fetch(url);
         const responseJson = await response.json();
