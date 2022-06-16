@@ -129,6 +129,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <br></br>
 
       <h6 className="standard-content">Space</h6>
       <div className='container-fluid movie-tinder'>

@@ -31,9 +31,9 @@ const Selectr = () => {
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    // if the randomId is not correlated with a property, pick a random good movie from imdatabase
-    // if it is, set center card to the random movie
-    if (responseJson.Response==="False") {
+    // checkIfProperty();
+    // retry random movie generation if there was no response or it was an episode
+    if (responseJson.Response==="False" || (responseJson.Title.includes("Episode"))) {
         getGoodMovie(imdatabase[Math.floor(Math.random() * imdatabase.length)].id);
     } else {
         setFilm(responseJson);
@@ -105,6 +105,11 @@ const Selectr = () => {
   return (
     <div className="outerdiv">
         <br></br>
+<<<<<<< HEAD
+=======
+        <h2 style={{ color: "yellow" }}>Recommendations</h2>
+        <br></br>
+>>>>>>> 01798b9c8ae0b30125046b153f8942562ebf80aa
       <Container className="container">
         <Card className="mainCard">
           <Card.Img variant="top" src={film.Poster} />
