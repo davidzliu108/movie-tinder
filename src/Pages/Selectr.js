@@ -13,7 +13,7 @@ const Selectr = () => {
     const url = `http://www.omdbapi.com/?i=${randomId}&apikey=67845d31`;
     const response = await fetch(url);
     const responseJson = await response.json();
-    if (responseJson.imdbRating) {
+    if (responseJson.imdbRating && !(responseJson.Title.includes("Episode"))) {
       // only set results if search returns something
       setFilm(responseJson);
     } else {
@@ -41,7 +41,7 @@ const Selectr = () => {
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>
-              {film.Title} {film.Year}
+              {film.Title} {'(' + film.Year + ')'}
             </Card.Title>
             <Card.Text>IMDB rating: {film.imdbRating}</Card.Text>
             <Card.Text>{film.Genre}</Card.Text>
