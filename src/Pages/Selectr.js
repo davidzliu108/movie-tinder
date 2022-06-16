@@ -22,8 +22,8 @@ const Selectr = () => {
     const responseJson = await response.json();
 
     // checkIfProperty();
-    if (responseJson.Response==="False") {
-      // only set results if search returns something
+    // retry random movie generation if there was no response or it was an episode
+    if (responseJson.Response==="False" || (responseJson.Title.includes("Episode"))) {
         getGoodMovie(imdatabase[Math.floor(Math.random() * imdatabase.length)].id);
     } else {
         setFilm(responseJson);
